@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
+  <link rel="stylesheeet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+</head>
+<style>
+.mar-top-20{
+margin-top:20px;
+}
+
+.tab-border{
+border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+    padding: 15px;
+	}
+.alert-dark{
+width: 50%;
+}	
+h3 {
+text-decoration: underline;
+}
+
+.carousel-item{
+font-color:#212529;
+}
+.card-header{
+padding-top: 0.25rem;
+}
+.card-header{
+padding-bottom: 0.25rem;
+}
+span {
+  padding-bottom: 5px;
+  border-bottom: 3px solid #000;
+  line-height: 48px;
+  width: 50px;
+}
+.subscribe_now h4{
+font-size: 3rem;
+}
+.form-control{
+width: 500px;
+}
+.subscribe_now{
+color: black;
+margin-top: 60px;
+}
+.subscribe_form{
+width: 50%;
+margin: 0 auto;
+}
+.block{
+border: 1px solid #e9ecef;
+} {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.row {
+  margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn.active {
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 10rem;
+}
+
+
+.btn.active {
+  background-color: #666;
+  color: white;
+  border-radius: 10rem;
+}
+.btn.btn-light{
+  border-radius: 10rem;
+  }
+.btn.btn-Primary{
+  border-radius: 10rem;
+  }
+.form-control{
+  border-radius: 10rem;
+  }
+  {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Homeslider-2.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+.fa fa-quote-left{
+ font-size: large;
+ border-radius: circle;
+}
+</style>
+
+<body>
+<a name="top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ <div class="container">
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home
+		<span class="sr-only">(current)</span>
+		</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#About">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Services</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Team</a>
+      </li>   
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Portfolio</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+	  <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>   
+    </ul>
+ </ul>
+    
+  </div>
+</nav>
+
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<div id="demo" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="skills-4698654_960_720.jpg" alt="First slide" height="90%">
+        <div class="carousel-caption d-none d-md-block">
+        <center><h2>The Best Business Information</h2><center>
+        <center><p>We're In The Business of Get Quality Business Service</p></center>
+  <button type="button" class="btn btn-light">SEE SERVICES</button>
+  <button type="button" class="btn btn-primary active">LEARN MORE</button>
+      </div>
+     </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="business-1137367_960_720.jpg" alt="Second slide" height="90%">
+       <div class="carousel-caption d-none d-md-block">
+        <center><h2>The Best Business Information</h2></center>
+        <center><p>We're In The Business of Get Quality Business Service</p><center>
+ <button type="button" class="btn btn-light">SEE SERVICES</button>
+  <button type="button" class="btn btn-primary active">LEARN MORE</button>
+  </div>
+</div>
+
+    <div class="carousel-item">
+     <img class="d-block w-100" src="meeting-2890414__340.jpg" alt="Third slide" height="90%">
+    <div class="carousel-caption d-none d-md-block">
+    <center><h2>The Best Business Information</h2></center>
+    <center><p>We're In The Business of Get Quality Business Service</p></center>
+	 <button type="button" class="btn btn-light">SEE SERVICES</button>
+     <button type="button" class="btn btn-primary active">LEARN MORE</button>
+  </div>
+</div>
+</div>
+  
+<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<br>
+<br>
+<br>
+<center><h1><span>About Us</span></h1></center><br>
+<div class="container">
+<div class="row">
+  <div class="col-sm-6"><img src="unnamed.jpg"></div>
+  <div class="col-sm-6"><h5>PROJECT MAINTENANCE1</h5>
+<p>
+Redug Large dolor sit amet,Consecteure adipisicing elit.Itaque quas officiis iure aspernatur sit asipisci quaerat unde at nequeRedug Large dolor sit amet,Consectetur adipisicing elit.itaque officiis iure
+</p>
+
+<i class="fa fas fa-check" style="font-size:16px;color:#5ECADB;"></i>&nbsp;Interior design Package<br>
+<i class="fa fas fa-check" style="font-size:16px;color:#5ECADB;"></i>&nbsp;Building House<br>
+<i class="fa fas fa-check" style="font-size:16px;color:#5ECADB;"></i>&nbsp;Reparing of Residentail Roof<br>
+<i class="fa fas fa-check" style="font-size:16px;color:#5ECADB;"></i>&nbsp;Renovaion of Commercial Office<br>
+<i class="fa fas fa-check" style="font-size:16px;color:#5ECADB;"></i>&nbsp;Make Quality Products
+	</div>
+</div>
+</div>
+<br>
+<br>
+
+<div class="container">
+  <center><h1><span>Our Services</span></h1></center>
+  <div class="services-grid">
+  <div class="service service1">
+  <div class="row">
+  <div class="col-sm mar-top-20">
+  <center><i class="fa fa-code fa-2x"></i></center>
+    <center><h4>Expert Coder</h4></center>
+    <center><p>will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks
+	finished by.</p></center>
+   </div>
+   <div class="col-sm">
+	<Center><i class="fa fa-camera-retro mar-top-20 fa-2x"></i></Center>
+      <center><h4>Creative Designer</h4></center>
+	  
+      <center><p>will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks
+	  finished by.</p></center>
+	 
+    </div>
+	<div class="col-sm">
+	<center><i class="fa-wordpress fa-2x mar-top-20"></i></center>
+      <center><h4>Wordpress Developer</h4></center>
+      <center><p>will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks
+	  finished by.</p></center>
+	  </div>
+   </div>
+   </div>
+  </div>
+ <br>
+</div>
+<div class="container">
+  <center><h1><span>Faq Question</span></h></center>
+  <br>
+  <div class="services-grid">
+  <div class="service service1">
+  <div class="row">
+  <div class="col-sm mar-top-20">
+  <div id="accordion">
+  <div class="card"> 
+    <div class="card-header" id="headingOne">
+	  <h5 class="mb-0">
+        <i class="fa fa-angle-down" aria-hidden="true"></i><button class="btn btn-link" data-toggle="collapse" data-target="" aria-expanded="true" aria-controls="collapseOne">
+           Consectetur adipisicing elit.
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <i class="fa fa-angle-right" aria-hidden="true"></i><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Dolore magnam quidem repellat.
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit,enim eiusmod high life accusamus terry richardson ad squid.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <i class="fa fa-angle-right" aria-hidden="true"></i><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Redug Lefes dolor sit
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit,enim eiusmod high life accusamus terry richardson ad squid.
+      </div>
+    </div>
+  </div>
+</div>
+ </div>
+   <div class="col-sm mar-top-20">
+	<nav class="nav nav-tabs nav-justified" >
+  <a class="nav-item nav-link active" data-toggle="tab" href="#home">Project</a>
+  <a class="nav-item nav-link" data-toggle="tab" href="#menu1">Planning</a>
+  <a class="nav-item nav-link" data-toggle="tab" href="#menu2">Success</a>
+ </nav>
+
+<div class="tab-content tab-border">
+<div id="home" class="tab-pane fade show active">
+    <h4>Project</h4>
+    <p> Redug Large dolor sit amet,Consecteure adipisicing elit.
+        Itaque quas officiis iure aspernatur sit asipisci quaerat unde at
+        nequeRedug Large dolor sit amet,Consectetur adipisicing elit.
+        itaque officiis iure.<br>
+		<br>voluptus,praesenium maxime cum fugiat,magnum ducimus adipisci voluptus,<br>
+		praesenium architecto ducimus,doloribus fuga itaque omnis placeat.</p>
+  </div>
+  <div id="menu1" class="tab-pane fade">
+    <h3>Planning</h3>
+  </div>
+  <div id="menu2" class="tab-pane fade">
+    <h3>Success</h3>
+  </div>
+  
+</div>
+	</div>
+	</div>
+	</div>
+	 
+    </div>
+	
+   </div>
+   </div>
+  </div>
+ <br>
+</div>
+
+<br>
+<br>
+
+<div id="subscription_area" style="background:url('bg-masthead.jpg') no-repeat center center;height:50%;width:100%"></center>
+<div class="container">
+    <div class="row"> 
+      <div class="col-sm-12 mar-top-20">
+	    <div class="subscribe_now">
+		
+         <center><h4>Welcome To Our Website</h4></center>
+         <center><p>Busuness Lorum ipsum dolor sit amet,Consectetur adipisicing elit.luctus est eget congue.</p></center>
+            <form class="subscribe_form">
+            <div class="input-group">
+                 <input type="text" class="form-control" name="email" placeholder="Enter your email">
+             
+               <button class="btn btn-Primary" type="button">Subscribe</button>
+           
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<br>
+ 
+<div class="container">
+<center><h1><span>Our Special Team</span></h1></center>
+  <div class="services-grid">
+  <div class="service service1">
+ <div class="content">
+            <div class="container">
+                <div class="row">
+                 
+				<div class="col-sm-3 mar-top-20 text-center">
+                    <div class="thumbnail"> 
+					<img src="https://freelancermax.com/freelancer/uploads/949E3D73-5B70-C7ED-A34F-809EBA24C16F.jpeg" alt="">
+				
+			<div class="block text-center">
+                     <h5>John Mickel</h5>
+					 <p>Ceo</p>
+                    </div>
+				</div>
+			</div>	
+	            <div class="col-sm-3 mar-top-20 text-center">
+		<div class="thumbnail"> 
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC-aQ5FvyDY0t0eWmpeyAD2j1jyB6OSJnEcxQyRV9pDdzDgm9k&s" alt="">
+				<div class="block text-center">
+                     <h5>Andrew Smith</h5>
+					 <p>Web Design</p>
+                        </div>
+					</div>			
+				</div>
+				<div class="col-sm-3 mar-top-20 text-center">
+		<div class="thumbnail"> 
+			<img src="file:///C:/Users/Admin/Desktop/images%20(5).jpg" alt="">
+				<div class="block text-center">
+                     <h5>Jhon Powel</h5>
+					 <p>Seo Expert</p>
+                        </div>
+					</div>
+				</div>
+				<div class="col-sm-3 mar-top-20 text-center">
+		<div class="thumbnail"> 
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcoa6EmUC_4pREzr_0vfy5g3TRjnkep9t8gyq2WnMyidSBf_5Y1w&s" alt="">
+				<div class="block text-center">
+                     <h5>Andrew Arnold</h5>
+					 <p>Web Developer</p>
+                        </div>
+					</div>			
+				</div>
+					
+		 
+           </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<br>
+<br>
+ 
+<div class="main">
+<center><h1><span>Our Special Team</span></h1></center>
+  <div class="services-grid">
+  <div class="service service1">
+ <div class="content">
+<div id="myBtnContainer mar-top-20">
+ <button class="btn active" onclick="filterSelection('all')"> Show All</button>
+   <button class="btn active" onclick="filterSelection('graphics')">Design</button>
+   <button class="btn active" onclick="filterSelection('Web')">Developent</button>
+   <button class="btn active" onclick="filterSelection('Photogallary')">Photoshop</button>
+</div>
+<br>
+<br>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column Design">
+    <div class="content">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA79xDLMybPWOkqwRENXWdsMzwp1sQ02IEL7O6PjHaXITYTCw6&s" alt="Mountains" style="width:100%">
+       </div>
+  </div>
+  <div class="column Design">
+    <div class="content">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHEf2PDOgqRZz0VUeR2vOTmBmhttQ8r7YQOfA9K2E6gBOoQa9vAQ&s" alt="Lights" style="width:100%">
+      </div>
+  </div>
+  <div class="column Deveopment">
+    <div class="content">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmQyaK8iYLtfzYaIrYMj-wFTLBBejED0DS0f-SEEsXcVOx4Tyitw&s" alt="Nature" style="width:100%">
+     </div>
+  </div></br>
+  
+  <div class="column Development">
+    <div class="content">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLNOl0aUm2jODsbkLmc4J9496RU_2F7o-7Zp4LCVagFL7A_Vhm1w&s" alt="Car" style="width:100%">
+      </div>
+  </div>
+  
+  <div class="column photoshop">
+    <div class="content">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIYTSbaM8UeZDYYEsRqyZlddl6cJe1ZvUf8HLUqWibXp9NHQ4a&s" alt="Car" style="width:100%">
+        </div>
+  </div>
+  
+  <div class="column Photoshop">
+    <div class="content">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPNFmjHQM_wov_bnq6Vc6RYPdo96ixG-HrppoTU2DQWFrMssHC&s" alt="Car" style="width:100%">
+     </div>
+  </div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<div class="hero-image">
+  <div class="hero-text">
+  <center><i class="fa fa-quote-left" aria-hidden="true" text-center></i></center><br>
+    <h1 style="font-size:14px">Lorum ipsum dolor sit amet,Consectetur adipisicing elit.Sed pulvinar luctus est eget congue.<br><br>Consectuer adipising elit.luctus est eget congue.<br><br></h1>
+    <p>Jhon</p>
+	<center><i class="fa fa-ellipsis-h" aria-hidden="true" text-center></i></center>
+  </div>
+</div>
+<br>
+ 
+<div class="main">
+<center><h1><span>Latest News</span></h1></center>
+  <div class="services-grid">
+  <div class="service service1">
+   </div>
+    </div>
+</div>
+<div class="row">
+    <div class="column Development">
+    <div class="content">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLNOl0aUm2jODsbkLmc4J9496RU_2F7o-7Zp4LCVagFL7A_Vhm1w&s" alt="Car" style="width:100%">
+      </div>
+  </div>
+  
+  <div class="column photoshop">
+    <div class="content">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIYTSbaM8UeZDYYEsRqyZlddl6cJe1ZvUf8HLUqWibXp9NHQ4a&s" alt="Car" style="width:100%">
+        </div>
+  </div>
+  
+  <div class="column Photoshop">
+    <div class="content">
+     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPNFmjHQM_wov_bnq6Vc6RYPdo96ixG-HrppoTU2DQWFrMssHC&s" alt="Car" style="width:100%">
+      </div>
+  </div>
+</div>
+
+</body>
+</html>
+ </body>
+</html>
